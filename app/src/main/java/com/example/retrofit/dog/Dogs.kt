@@ -1,6 +1,6 @@
 package com.example.retrofit.dog
 
-data class DogsResponse(
+data class Dogs(
     val message: List<String>,
     val status: String
 )

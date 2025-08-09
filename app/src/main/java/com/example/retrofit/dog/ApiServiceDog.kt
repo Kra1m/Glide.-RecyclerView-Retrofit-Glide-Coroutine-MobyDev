@@ -4,5 +4,5 @@ import retrofit2.http.GET
 
 interface ApiServiceDog {
     @GET ("breeds/image/random/4")
-    suspend fun getRandomDog(): DogsResponse
+    suspend fun getRandomDog(): Dogs
 }

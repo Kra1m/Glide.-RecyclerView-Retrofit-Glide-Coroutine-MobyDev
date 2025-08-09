@@ -4,22 +4,29 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.retrofit.data.Meme
 import com.example.retrofit.databinding.ExampleAdapterBinding
-import com.example.retrofit.dog.DogsResponse
+import com.example.retrofit.dog.Dogs
+
 
 class ExampleRecyclerAdapter(): RecyclerView.Adapter<ExampleRecyclerAdapter.ExampleViewHolder>() {
-
-    private val adapterList = mutableListOf<Meme>()
+    private val adapterList = mutableListOf<String>()
+    //private val adapterList = mutableListOf<Meme>()
     inner class ExampleViewHolder(private var binding: ExampleAdapterBinding):RecyclerView.ViewHolder(binding.root){
-        fun onBind(memeItem:Meme){
-            binding.tvProductTitle.text = memeItem.name
-            binding.tvProductPrice.text = memeItem.url
+        fun onBind(item: String){
             Glide
                 .with(binding.imageView.context)
-                .load(memeItem.url)
-                .into(binding.imageView);
+                .load(item)
+                .into(binding.imageView)
         }
+
+//        fun onBind(memeItem:Meme){
+//            binding.tvProductTitle.text = memeItem.name
+//            binding.tvProductPrice.text = memeItem.url
+//            Glide
+//                .with(binding.imageView.context)
+//                .load(memeItem.url)
+//                .into(binding.imageView);
+//        }
 
     //
     //        fun onBind(item:DogsResponse){
@@ -33,7 +40,11 @@ class ExampleRecyclerAdapter(): RecyclerView.Adapter<ExampleRecyclerAdapter.Exam
     }
 
 
-    fun submitList(list: List<Meme>){
+//    fun submitList(list: List<Meme>){
+//        adapterList.addAll(list)
+//    }
+
+    fun submitList(list: List<String>){
         adapterList.addAll(list)
     }
 
