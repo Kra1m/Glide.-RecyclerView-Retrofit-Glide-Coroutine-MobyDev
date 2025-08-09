@@ -7,36 +7,49 @@
     android:background="#B02750"
     tools:context=".SecondFragment1">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcViewMemes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textForSecondFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
         android:background="#03A9F0"
         android:text="Second Fragment"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRandomTdyFact" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+     <Button
         android:id="@+id/btnFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginBottom="10dp"
         android:text="Change Fragment"
+        app:layout_constraintBottom_toTopOf="@+id/btnRandomTdyFact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnRandomTdyFact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:text="Random Today Fact"
+        app:layout_constraintBottom_toTopOf="@+id/textForSecondFragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFragment" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

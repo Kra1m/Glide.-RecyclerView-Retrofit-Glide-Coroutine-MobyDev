@@ -8,9 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.retrofit.ExampleRecyclerAdapter
 import com.example.retrofit.R
+import com.example.retrofit.data.Meme
 import com.example.retrofit.data.RetrofitService
 import com.example.retrofit.databinding.FragmentSecond1Binding
+import com.example.retrofit.dog.DogsResponse
+import com.example.retrofit.dog.RetrofitDog
 import kotlinx.coroutines.launch
 
 class SecondFragment1 : Fragment() {
@@ -40,6 +44,33 @@ class SecondFragment1 : Fragment() {
                 }
             }
         }
+
+//
+//        viewLifecycleOwner.lifecycleScope.launch {
+//            try {
+//                val response: DogsResponse = RetrofitDog.apiServiceDog.getRandomDog()
+//                val listDogs: List<String> = response.message
+//                val adapter = ExampleRecyclerAdapter()
+//                binding.rcViewMemes.adapter = adapter
+//                adapter.submitList(listDogs)
+//            }catch (e: Exception){
+//                Log.e("ogo", e.message.toString())
+//            }
+//        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val response = RetrofitService.apiServiceMemes.getMemes()
+                val listMemes: List<Meme> = response.data.memes
+                val adapter = ExampleRecyclerAdapter()
+                binding.rcViewMemes.adapter = adapter
+                adapter.submitList(listMemes)
+            }catch (e: Exception){
+                Log.d("aaa", e.message.toString())
+            }
+        }
+
+
     }
 
 }

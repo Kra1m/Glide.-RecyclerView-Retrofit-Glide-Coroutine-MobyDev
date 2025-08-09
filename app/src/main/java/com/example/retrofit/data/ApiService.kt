@@ -7,6 +7,6 @@ interface ApiService {
     suspend fun getFacts():RandomFactsResponse
 
     @GET("get_memes")
-    suspend fun getMemes():
+    suspend fun getMemes():MemesResponse
 }
 

@@ -17,6 +17,6 @@ object RetrofitService {
 
     val apiService: ApiService = retrofit.create(ApiService::class.java)
     val apiServiceToday: ApiServiceTodayFact = retrofit.create(ApiServiceTodayFact::class.java)
-    val apiServiceMemes: ApiService = retrofit.create((ApiService::class.java))
+    val apiServiceMemes: ApiService = retrofitMemes.create((ApiService::class.java))
 
 }
